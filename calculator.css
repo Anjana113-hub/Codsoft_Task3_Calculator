@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle, rgb(63, 207, 251) 0%, rgb(51, 241, 162) 100%);
+  height: 100vh; /* Ensures the body takes the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Aligns content vertically */
+}
+
+.waviy {
+  text-align: center;
+  margin-bottom: 20px; /* Space between title and calculator */
+}
+
+.waviy span {
+  display: inline-block;
+  font-size: 40px;
+  background: linear-gradient(to left, #cc0be6 0%, #921eff 50%, #ca06bd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes flip {
+  0%, 80% {
+      transform: rotateY(360deg);
+  }
+}
+
+.main {
+  width: 90%;
+  max-width: 400px; /* Maximum width for larger screens */
+  height: 450px;
+  background-color: white;
+  border: 5px solid #3d98d0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly within the calculator */
+  align-items: center;
+  padding: 10px; /* Added padding to ensure content stays within */
+}
+
+.main input[type='text'] {
+  width: 100%; /* Make input take full width */
+  height: 80px;
+  text-align: right;
+  padding: 3px 6px;
+  outline: none;
+  font-size: 40px;
+  border: 5px solid rgb(14, 173, 201);
+  border-radius: 6px;
+  color: #075c4f;
+}
+
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Evenly distributes buttons */
+  width: 100%;
+  padding: 10px 0; /* Added padding to ensure spacing */
+}
+
+.btn input[type='button'] {
+  flex: 1 1 22%; /* Allows buttons to flex and wrap within container */
+  margin: 4px; /* Adjusted margin to reduce overflow */
+  height: 60px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.5s;
+  background-color: rgb(106, 179, 228);
+  border-radius: 6px;
+  color: white;
+}
+
+.btn input[type='button']:hover {
+  background-color: rgb(37, 223, 62);
+  color: #d809e7;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    max-width: 350px;
+    height: auto; /* Allow height to adjust automatically */
+  }
+
+  .main input[type='text'] {
+    font-size: 32px;
+    height: 70px;
+  }
+
+  .btn input[type='button'] {
+    height: 55px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    max-width: 300px;
+  }
+
+  .main input[type='text'] {
+    font-size: 28px;
+    height: 60px;
+  }
+
+  .btn input[type='button'] {
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    max-width: 250px;
+  }
+
+  .main input[type='text'] {
+    font-size: 24px;
+    height: 50px;
+  }
+
+  .btn input[type='button'] {
+    flex: 1 1 48%; /* Adjust button width to fit 2 buttons per row */
+    height: 45px;
+    font-size: 12px;
+    margin: 2px; /* Reduce margin for better fit */
+  }
+
+  .waviy span {
+    font-size: 30px;
+  }
+}
