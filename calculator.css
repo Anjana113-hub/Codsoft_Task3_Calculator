@@ -132,7 +132,6 @@ body {
   }
 
   .btn input[type='button'] {
-    flex: 1 1 48%; /* Adjust button width to fit 2 buttons per row */
     height: 45px;
     font-size: 12px;
     margin: 2px; /* Reduce margin for better fit */
@@ -140,5 +139,27 @@ body {
 
   .waviy span {
     font-size: 30px;
+  }
+}
+
+/* New CSS for Preventing Size Reduction */
+@media (max-width: 350px) {
+  .main {
+    transform: scale(0.9); /* Scale down the container while preserving original dimensions */
+  }
+
+  .waviy span {
+    font-size: 28px; /* Adjusting title size at smallest scale */
+  }
+}
+
+/* New CSS for Preventing Size Reduction */
+@media (max-width: 350px) {
+  .main {
+    transform: scale(0.9); /* Scale down the container while preserving original dimensions */
+  }
+
+  .waviy span {
+    font-size: 28px; /* Adjusting title size at smallest scale */
   }
 }
